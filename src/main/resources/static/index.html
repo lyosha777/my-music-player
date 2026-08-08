@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyMusic</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="top-bar">
+        <div>
+            <p class="eyebrow">YOUR LIBRARY</p>
+            <h1>MyMusic</h1>
+        </div>
+
+        <button class="icon-button" id="refresh-button" aria-label="Refresh">
+            ↻
+        </button>
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-icon">
+                ♪
+            </div>
+
+            <div>
+                <p class="hero-small">PERSONAL MUSIC</p>
+                <h2>Your songs.<br>Your player.</h2>
+                <p class="hero-description">
+                    Stream your personal library directly from your own server.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="search-section">
+
+        <div class="search-bar">
+
+            <span class="search-icon">⌕</span>
+
+            <input
+                    id="search-input"
+                    type="text"
+                    placeholder="Search songs or artists..."
+                    autocomplete="off"
+            >
+
+            <button id="clear-search" class="clear-search hidden">
+                ×
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <main>
+
+        <div class="section-heading">
+
+            <div>
+                <p class="section-label">LIBRARY</p>
+                <h2>All Songs</h2>
+            </div>
+
+            <span id="song-count" class="song-count">
+                0 songs
+            </span>
+
+        </div>
+
+
+        <div id="song-list" class="song-list">
+
+            <div class="loading">
+                Loading your music...
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <div class="player-container" id="player-container">
+
+        <div class="progress-area">
+
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress-filled" id="progress-filled"></div>
+            </div>
+
+        </div>
+
+
+        <div class="player-main">
+
+            <div class="now-playing">
+
+                <div class="player-cover" id="player-cover">
+                    ♪
+                </div>
+
+                <div class="player-song-info">
+
+                    <p id="player-title">
+                        Choose a song
+                    </p>
+
+                    <span id="player-artist">
+                        Nothing playing
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="player-controls">
+
+                <button
+                        class="control-button secondary"
+                        id="previous-button"
+                        aria-label="Previous song">
+                    ‹
+                </button>
+
+                <button
+                        class="play-button"
+                        id="play-button"
+                        aria-label="Play">
+                    ▶
+                </button>
+
+                <button
+                        class="control-button secondary"
+                        id="next-button"
+                        aria-label="Next song">
+                    ›
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="time-row">
+
+            <span id="current-time">0:00</span>
+
+            <span id="duration">0:00</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="bottom-nav">
+
+        <button class="nav-item active">
+
+            <span class="nav-icon">⌂</span>
+            <span>Home</span>
+
+        </button>
+
+
+        <button class="nav-item">
+
+            <span class="nav-icon">♫</span>
+            <span>Library</span>
+
+        </button>
+
+
+        <button class="nav-item">
+
+            <span class="nav-icon">♡</span>
+            <span>Favorites</span>
+
+        </button>
+
+    </nav>
+
+
+    <audio id="player"></audio>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

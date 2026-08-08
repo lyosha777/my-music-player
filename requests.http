@@ -1,0 +1,36 @@
+POST http://localhost:8080/api/songs
+Content-Type: application/json
+
+{
+  "title": "Test Song",
+  "artist": "Test Artist",
+  "album": "Test Album",
+  "fileName": "test.mp3",
+  "filePath": "music/test.mp3"
+}
+
+###
+GET http://localhost:8080/api/songs
+
+###
+POST http://localhost:8080/api/songs/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="title"
+
+Cupid - Twin Version
+--WebAppBoundary
+Content-Disposition: form-data; name="artist"
+
+FIFTY FIFTY
+--WebAppBoundary
+Content-Disposition: form-data; name="album"
+
+The Beginning: Cupid
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="cupid.mp3"
+Content-Type: audio/mpeg
+
+< C:\Users\alenm\OneDrive\Desktop\lyosha\musicApp\cupid.mp3
+--WebAppBoundary--
